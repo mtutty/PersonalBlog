@@ -1,0 +1,14 @@
+﻿@using PersonalBlog.Models
+
+@if(ViewBag.BlogPosts.Count == 0)
+{
+	<div class="post-content last span-9 nudge-2">
+		<h3>No Postings</h3>
+		<p>Sorry, there are no postings available.</p>
+    </div>    
+}
+
+@foreach (BlogPost post in ViewBag.BlogPosts)
+{
+    @Html.Partial(@"_BlogPostBlock", post)
+}

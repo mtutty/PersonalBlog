@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="55742a45-dc08-4cf5-b8c5-044f53164ade" name="Michael@MTUTTY-LAP 2011-09-05 21:29:24" runUser="mtutty-lap\Michael" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="c8850121-b61c-4f2d-9e8f-bd85a4f854fe">
+    <Deployment runDeploymentRoot="Michael_MTUTTY-LAP 2011-09-05 21_29_24">
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\MySql.Data.6.4.3\lib\net40\mysql.data.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\PersonalBlog\bin\PersonalBlog.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\FluentNHibernate.1.3.0.717\lib\FluentNHibernate.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-09-05T21:29:24.4484229-05:00" queuing="2011-09-05T21:29:24.9684527-05:00" start="2011-09-05T21:29:24.9814534-05:00" finish="2011-09-05T21:29:29.7889223-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestBlogPostPersistence" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="fe43b24a-805f-1e1b-7815-b1a83bbb9004">
+      <Execution id="18e95b53-eaf4-45e3-9e18-ba0dadd74cbb" />
+      <TestMethod codeBase="C:/Users/Michael/documents/visual studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Models.BlogPostTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestBlogPostPersistence" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="fe43b24a-805f-1e1b-7815-b1a83bbb9004" executionId="18e95b53-eaf4-45e3-9e18-ba0dadd74cbb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="18e95b53-eaf4-45e3-9e18-ba0dadd74cbb" testId="fe43b24a-805f-1e1b-7815-b1a83bbb9004" testName="TestBlogPostPersistence" computerName="MTUTTY-LAP" duration="00:00:04.2195985" startTime="2011-09-05T21:29:24.9944542-05:00" endTime="2011-09-05T21:29:29.6849164-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="18e95b53-eaf4-45e3-9e18-ba0dadd74cbb">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method PersonalBlog.Tests.Models.BlogPostTest.TestBlogPostPersistence threw exception: 
+System.ApplicationException: For property 'CreateDate' expected same element, but got different element with the same value '9/5/2010 9:29:28 PM' of type 'System.DateTime'.
+Tip: use a CustomEqualityComparer when creating the PersistenceSpecification object.</Message>
+          <StackTrace>    at FluentNHibernate.Testing.Values.Property`2.CheckValue(Object target) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\Values\Property.cs:line 82
+   at FluentNHibernate.Testing.PersistenceSpecification`1.&lt;&gt;c__DisplayClass2.&lt;VerifyTheMappings&gt;b__1(Property`1 p) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\PersistenceSpecification.cs:line 64
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at FluentNHibernate.Testing.PersistenceSpecification`1.VerifyTheMappings(T first) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\PersistenceSpecification.cs:line 64
+   at FluentNHibernate.Testing.PersistenceSpecification`1.VerifyTheMappings() in d:\Builds\FluentNH\src\FluentNHibernate\Testing\PersistenceSpecification.cs:line 40
+   at PersonalBlog.Tests.Models.BlogPostTest.TestBlogPostPersistence() in C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\PersonalBlog.Tests\Models\BlogPostTest.cs:line 125
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PersonalBlogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PersonalBlogModelStoreContainer">
+    <EntitySet Name="BlogPosts" EntityType="PersonalBlogModel.Store.BlogPosts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tags" EntityType="PersonalBlogModel.Store.Tags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="PersonalBlogModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="BlogPostTag" Association="PersonalBlogModel.Store.BlogPostTag">
+      <End Role="BlogPost" EntitySet="BlogPosts" />
+      <End Role="Tag" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="BlogPostComment" Association="PersonalBlogModel.Store.BlogPostComment">
+      <End Role="BlogPost" EntitySet="BlogPosts" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BlogPosts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PublishStatus" Type="nvarchar" Nullable="false" DefaultValue="N" MaxLength="1" />
+    <Property Name="RewriteID" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Author" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ContentType" Type="nvarchar" Nullable="false" DefaultValue="H" MaxLength="1" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ViewCount" Type="int" Nullable="false" DefaultValue="0" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TagValue" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BlogPost_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Author" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="CommentText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BlogPost_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="BlogPostTag">
+    <End Role="BlogPost" Type="PersonalBlogModel.Store.BlogPosts" Multiplicity="1" />
+    <End Role="Tag" Type="PersonalBlogModel.Store.Tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tag">
+        <PropertyRef Name="BlogPost_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BlogPostComment">
+    <End Role="BlogPost" Type="PersonalBlogModel.Store.BlogPosts" Multiplicity="1" />
+    <End Role="Comment" Type="PersonalBlogModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="BlogPost_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PersonalBlogModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="PersonalBlogModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlogPosts" EntityType="PersonalBlogModel.BlogPost" />
+          <EntitySet Name="Tags" EntityType="PersonalBlogModel.Tag" />
+          <AssociationSet Name="BlogPostTag" Association="PersonalBlogModel.BlogPostTag">
+            <End Role="BlogPost" EntitySet="BlogPosts" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <EntitySet Name="Comments" EntityType="PersonalBlogModel.Comment" />
+          <AssociationSet Name="BlogPostComment" Association="PersonalBlogModel.BlogPostComment">
+            <End Role="BlogPost" EntitySet="BlogPosts" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BlogPost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="PublishStatus" Nullable="false" MaxLength="1" DefaultValue="N" >
+            <Documentation>
+              <Summary>N = New, P = Published, A = Archived, D = Deleted</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="RewriteID" MaxLength="50" Nullable="true" />
+          <Property Type="String" Name="Author" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="ContentType" Nullable="false" MaxLength="1" DefaultValue="H" />
+          <Property Type="String" Name="Content" Nullable="false" />
+          <NavigationProperty Name="Tags" Relationship="PersonalBlogModel.BlogPostTag" FromRole="BlogPost" ToRole="Tag" />
+          <NavigationProperty Name="Comments" Relationship="PersonalBlogModel.BlogPostComment" FromRole="BlogPost" ToRole="Comment" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="ViewCount" Nullable="false" DefaultValue="0" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TagValue" Nullable="false" MaxLength="50" />
+          <NavigationProperty Name="BlogPost" Relationship="PersonalBlogModel.BlogPostTag" FromRole="Tag" ToRole="BlogPost" />
+        </EntityType>
+        <Association Name="BlogPostTag">
+          <End Type="PersonalBlogModel.BlogPost" Role="BlogPost" Multiplicity="1" />
+          <End Type="PersonalBlogModel.Tag" Role="Tag" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="BlogPost" Relationship="PersonalBlogModel.BlogPostComment" FromRole="Comment" ToRole="BlogPost" />
+          <Property Type="String" Name="Author" Nullable="false" MaxLength="255" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="CommentText" Nullable="false" MaxLength="4096" />
+        </EntityType>
+        <Association Name="BlogPostComment">
+          <End Type="PersonalBlogModel.BlogPost" Role="BlogPost" Multiplicity="1" />
+          <End Type="PersonalBlogModel.Comment" Role="Comment" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PersonalBlogModelStoreContainer" CdmEntityContainer="PersonalBlogModelContainer">
+    <EntitySetMapping Name="BlogPosts">
+      <EntityTypeMapping TypeName="IsTypeOf(PersonalBlogModel.BlogPost)">
+        <MappingFragment StoreEntitySet="BlogPosts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PublishStatus" ColumnName="PublishStatus" />
+          <ScalarProperty Name="RewriteID" ColumnName="RewriteID" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="IsTypeOf(PersonalBlogModel.Tag)">
+        <MappingFragment StoreEntitySet="Tags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TagValue" ColumnName="TagValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="IsTypeOf(PersonalBlogModel.Comment)">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CommentText" ColumnName="CommentText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BlogPostTag" TypeName="PersonalBlogModel.BlogPostTag" StoreEntitySet="Tags">
+      <EndProperty Name="BlogPost">
+        <ScalarProperty Name="Id" ColumnName="BlogPost_Id" />
+      </EndProperty>
+      <EndProperty Name="Tag">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BlogPostComment" TypeName="PersonalBlogModel.BlogPostComment" StoreEntitySet="Comments">
+      <EndProperty Name="BlogPost">
+        <ScalarProperty Name="Id" ColumnName="BlogPost_Id" />
+      </EndProperty>
+      <EndProperty Name="Comment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="PersonalBlogModel" >
+        <EntityTypeShape EntityType="PersonalBlogModel.BlogPost" Width="1.5" PointX="0.5" PointY="0.5" Height="3.1340950520833331" />
+        <EntityTypeShape EntityType="PersonalBlogModel.Tag" Width="1.5" PointX="3.25" PointY="0.75" Height="1.59568359375" />
+        <AssociationConnector Association="PersonalBlogModel.BlogPostTag">
+          <ConnectorPoint PointX="2" PointY="1.5478417968750002" />
+          <ConnectorPoint PointX="3.25" PointY="1.5478417968750002" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PersonalBlogModel.Comment" Width="1.5" PointX="3.25" PointY="2.625" Height="1.9802864583333335" />
+        <AssociationConnector Association="PersonalBlogModel.BlogPostComment">
+          <ConnectorPoint PointX="2" PointY="3.1295475260416667" />
+          <ConnectorPoint PointX="3.25" PointY="3.1295475260416667" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

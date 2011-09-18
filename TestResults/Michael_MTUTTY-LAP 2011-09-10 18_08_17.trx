@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="a7e3b63b-0fd0-4f2e-8b89-b690d7b0019f" name="Michael@MTUTTY-LAP 2011-09-10 18:08:17" runUser="mtutty-lap\Michael" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="609e203f-2a9b-4d25-99ed-38230f9ec666">
+    <Deployment runDeploymentRoot="Michael_MTUTTY-LAP 2011-09-10 18_08_17">
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\FluentNHibernate.1.3.0.717\lib\FluentNHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\MySql.Data.6.4.3\lib\net40\mysql.data.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\PersonalBlog\bin\PersonalBlog.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-09-10T18:08:17.4162366-05:00" queuing="2011-09-10T18:08:18.1522787-05:00" start="2011-09-10T16:08:18.1772801-05:00" finish="2011-09-10T16:08:18.9983271-05:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ConfigSettingsServiceConstructorTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="5b92c567-e9ac-208c-dc19-33878201bc6a">
+      <Execution id="abbc8a78-618d-444f-a8a6-0a66ece3b410" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ConfigSettingsServiceConstructorTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5b92c567-e9ac-208c-dc19-33878201bc6a" executionId="abbc8a78-618d-444f-a8a6-0a66ece3b410" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="abbc8a78-618d-444f-a8a6-0a66ece3b410" testId="5b92c567-e9ac-208c-dc19-33878201bc6a" testName="ConfigSettingsServiceConstructorTest" computerName="MTUTTY-LAP" duration="00:00:00.0545460" startTime="2011-09-10T18:08:18.1852805-05:00" endTime="2011-09-10T18:08:18.9433239-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="abbc8a78-618d-444f-a8a6-0a66ece3b410">
+    </UnitTestResult>
+  </Results>
+</TestRun>

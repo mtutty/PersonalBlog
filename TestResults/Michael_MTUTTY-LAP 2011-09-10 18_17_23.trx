@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="7b858206-9e95-4789-9574-bae1a9a690c7" name="Michael@MTUTTY-LAP 2011-09-10 18:17:23" runUser="mtutty-lap\Michael" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="8122bb7b-6b80-46cd-9588-9fcade3b4349">
+    <Deployment runDeploymentRoot="Michael_MTUTTY-LAP 2011-09-10 18_17_23">
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\FluentNHibernate.1.3.0.717\lib\FluentNHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\MySql.Data.6.4.3\lib\net40\mysql.data.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\PersonalBlog\bin\PersonalBlog.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-09-10T18:17:23.6202324-05:00" queuing="2011-09-10T18:17:25.3113292-05:00" start="2011-09-10T16:17:25.4303360-05:00" finish="2011-09-10T16:17:26.3323876-05:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetSettingIntTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="656630bd-0ba5-6314-30e5-0c40dbf1c989">
+      <Execution id="34dc62f3-420f-467c-b9fe-5a5b377f5263" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetSettingIntTest" />
+    </UnitTest>
+    <UnitTest name="ConfigSettingsServiceNullConstructorTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="92267241-0f9c-e1a1-47cf-dbec5beeac99">
+      <Execution id="68d7f779-68e0-4f31-aa1f-f5407b3bddc0" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ConfigSettingsServiceNullConstructorTest" />
+    </UnitTest>
+    <UnitTest name="ConfigSettingsServiceConstructorTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="5b92c567-e9ac-208c-dc19-33878201bc6a">
+      <Execution id="286ce00f-4c25-456c-9f51-3fd181b8a33d" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ConfigSettingsServiceConstructorTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5b92c567-e9ac-208c-dc19-33878201bc6a" executionId="286ce00f-4c25-456c-9f51-3fd181b8a33d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="656630bd-0ba5-6314-30e5-0c40dbf1c989" executionId="34dc62f3-420f-467c-b9fe-5a5b377f5263" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92267241-0f9c-e1a1-47cf-dbec5beeac99" executionId="68d7f779-68e0-4f31-aa1f-f5407b3bddc0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="286ce00f-4c25-456c-9f51-3fd181b8a33d" testId="5b92c567-e9ac-208c-dc19-33878201bc6a" testName="ConfigSettingsServiceConstructorTest" computerName="MTUTTY-LAP" duration="00:00:00.0925698" startTime="2011-09-10T18:17:25.4643379-05:00" endTime="2011-09-10T18:17:26.2543831-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="286ce00f-4c25-456c-9f51-3fd181b8a33d">
+    </UnitTestResult>
+    <UnitTestResult executionId="34dc62f3-420f-467c-b9fe-5a5b377f5263" testId="656630bd-0ba5-6314-30e5-0c40dbf1c989" testName="GetSettingIntTest" computerName="MTUTTY-LAP" duration="00:00:00.0015216" startTime="2011-09-10T18:17:26.2583833-05:00" endTime="2011-09-10T18:17:26.2683839-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34dc62f3-420f-467c-b9fe-5a5b377f5263">
+    </UnitTestResult>
+    <UnitTestResult executionId="68d7f779-68e0-4f31-aa1f-f5407b3bddc0" testId="92267241-0f9c-e1a1-47cf-dbec5beeac99" testName="ConfigSettingsServiceNullConstructorTest" computerName="MTUTTY-LAP" duration="00:00:00.0100471" startTime="2011-09-10T18:17:26.2713841-05:00" endTime="2011-09-10T18:17:26.2913852-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="68d7f779-68e0-4f31-aa1f-f5407b3bddc0">
+    </UnitTestResult>
+  </Results>
+</TestRun>

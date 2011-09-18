@@ -1,0 +1,107 @@
+﻿table.listing
+{
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+    width: 98%;
+}
+
+table.listing th
+{
+    border-bottom: solid 1px #555;
+    border-collapse: collapse;
+    font-weight: normal;
+    padding: .2em .2em .25em .2em;
+}
+
+table.listing td
+{
+    border-collapse: collapse;
+    font-weight: normal;
+    padding: .5em .2em .25em .2em;
+}
+
+fieldset
+{
+    border: none;
+    margin-left: 4em;
+    margin-top: .5em;
+}
+
+fieldset legend
+{
+    display: none;
+}
+
+textarea {
+    width: 800px;
+    height: 380px;
+    font-size: 12px;
+    padding: .25em .25em .25em .25em;
+}
+
+.editor-label, .display-label
+{
+    clear: both;
+    float: left;
+    font-size: 12px;
+    margin-bottom: 1.25em;
+    padding-top: .5em;
+    width: 150px;
+}
+
+.display-label 
+{
+    font-weight: bold;
+}
+
+
+.editor-field, .display-field
+{
+    float: left;
+}
+
+.display-field 
+{
+    font-size: 12px;
+    padding-top: .5em;
+    vertical-align: middle;
+}
+
+input[type='text'], select 
+{
+    margin-right: 1em;
+}
+
+input[data-val-required]
+{
+    background-color: #FFE0E0;
+    border: 1px solid #808080;
+}
+
+input[readonly='readonly'] {
+    background-color: white;
+    color: #666;
+}
+
+input[type='button'], input[type='submit'], input[type='reset']
+{
+    clear: both;
+    float: left;
+    font-size: 12px;
+    margin-left: 140px;
+    min-width: 100px;
+    width: auto;
+}
+
+select {
+    height: 2em;
+}
+
+.indexlink {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: .5em;
+    padding: 1em 2em 1.5em 0;
+}

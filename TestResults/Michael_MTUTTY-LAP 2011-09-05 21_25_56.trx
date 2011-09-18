@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="8d0f258b-1481-4795-b0bb-9d96252b5229" name="Michael@MTUTTY-LAP 2011-09-05 21:25:56" runUser="mtutty-lap\Michael" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="ea09287e-964f-4c12-a425-15645cd47a60">
+    <Deployment runDeploymentRoot="Michael_MTUTTY-LAP 2011-09-05 21_25_56">
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\MySql.Data.6.4.3\lib\net40\mysql.data.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\PersonalBlog\bin\PersonalBlog.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\packages\FluentNHibernate.1.3.0.717\lib\FluentNHibernate.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-09-05T21:25:56.4019990-05:00" queuing="2011-09-05T21:25:57.3266467-05:00" start="2011-09-05T21:25:57.4226522-05:00" finish="2011-09-05T21:26:01.3408720-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestBlogPostPersistence" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="fe43b24a-805f-1e1b-7815-b1a83bbb9004">
+      <Execution id="d33d68c4-a49a-41c4-83e0-9f1fca2878dd" />
+      <TestMethod codeBase="C:/Users/Michael/documents/visual studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Models.BlogPostTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestBlogPostPersistence" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="fe43b24a-805f-1e1b-7815-b1a83bbb9004" executionId="d33d68c4-a49a-41c4-83e0-9f1fca2878dd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="d33d68c4-a49a-41c4-83e0-9f1fca2878dd" testId="fe43b24a-805f-1e1b-7815-b1a83bbb9004" testName="TestBlogPostPersistence" computerName="MTUTTY-LAP" duration="00:00:03.1791557" startTime="2011-09-05T21:25:57.4236523-05:00" endTime="2011-09-05T21:26:01.2198651-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d33d68c4-a49a-41c4-83e0-9f1fca2878dd">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method PersonalBlog.Tests.Models.BlogPostTest.TestBlogPostPersistence threw exception: 
+NHibernate.MappingException: No persister for: PersonalBlog.Models.Comment[]</Message>
+          <StackTrace>    at NHibernate.Impl.SessionFactoryImpl.GetEntityPersister(String entityName)
+   at NHibernate.Impl.SessionImpl.GetEntityPersister(String entityName, Object obj)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at FluentNHibernate.Testing.PersistenceSpecification`1.TransactionalSave(Object propertyValue) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\PersistenceSpecification.cs:line 79
+   at FluentNHibernate.Testing.Values.ReferenceProperty`2.HasRegistered(PersistenceSpecification`1 specification) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\Values\ReferenceProperty.cs:line 12
+   at FluentNHibernate.Testing.PersistenceSpecification`1.RegisterCheckedProperty(Property`1 property, IEqualityComparer equalityComparer) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\PersistenceSpecification.cs:line 95
+   at FluentNHibernate.Testing.PersistenceSpecificationExtensions.CheckReference[T](PersistenceSpecification`1 spec, Expression`1 expression, Object propertyValue, IEqualityComparer propertyComparer) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\PersistenceSpecificationExtensions.cs:line 82
+   at FluentNHibernate.Testing.PersistenceSpecificationExtensions.CheckReference[T,TReference](PersistenceSpecification`1 spec, Expression`1 expression, TReference propertyValue, Func`2[] propertiesToCompare) in d:\Builds\FluentNH\src\FluentNHibernate\Testing\PersistenceSpecificationExtensions.cs:line 93
+   at PersonalBlog.Tests.Models.BlogPostTest.TestBlogPostPersistence() in C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\PersonalBlog.Tests\Models\BlogPostTest.cs:line 125
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

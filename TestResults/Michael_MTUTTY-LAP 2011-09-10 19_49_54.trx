@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ae62f7d5-834c-47dd-bed1-79903b6d1d6a" name="Michael@MTUTTY-LAP 2011-09-10 19:49:54" runUser="mtutty-lap\Michael" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="b8e5f287-48b5-490c-afb0-08f130300db6">
+    <Deployment runDeploymentRoot="Michael_MTUTTY-LAP 2011-09-10 19_49_54">
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\FluentNHibernate.1.3.0.717\lib\FluentNHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\MySql.Data.6.4.3\lib\net40\mysql.data.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\PersonalBlog\bin\PersonalBlog.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-09-10T19:49:54.2485675-05:00" queuing="2011-09-10T19:49:56.4850920-05:00" start="2011-09-10T17:49:56.5120935-05:00" finish="2011-09-10T17:50:03.3682225-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="3" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="FrontPagePostingsTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="060d123e-a355-52bf-4010-92376ef69cf8">
+      <Execution id="902ea80f-a72d-44b6-95b5-1f38ed70baf2" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="FrontPagePostingsTest" />
+    </UnitTest>
+    <UnitTest name="FindByRewriteIDTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="6ae18999-8c77-96f8-0306-1d34b37f70bd">
+      <Execution id="6ba15b47-05a6-4f0b-baa9-05cf1fe6a441" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="FindByRewriteIDTest" />
+    </UnitTest>
+    <UnitTest name="ArchivePostingsTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="e3a03cbf-79c7-6bac-a957-d2fc0c8529ff">
+      <Execution id="da512a45-084c-4641-adcd-f84a3d966bcb" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ArchivePostingsTest" />
+    </UnitTest>
+    <UnitTest name="BlogPostServiceConstructorTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="b2ecd4f0-02d2-6c27-ecde-4eb0dfaf67d2">
+      <Execution id="096a1385-5feb-4874-bf5b-71ddb0c28a74" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="BlogPostServiceConstructorTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="060d123e-a355-52bf-4010-92376ef69cf8" executionId="902ea80f-a72d-44b6-95b5-1f38ed70baf2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ae18999-8c77-96f8-0306-1d34b37f70bd" executionId="6ba15b47-05a6-4f0b-baa9-05cf1fe6a441" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2ecd4f0-02d2-6c27-ecde-4eb0dfaf67d2" executionId="096a1385-5feb-4874-bf5b-71ddb0c28a74" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3a03cbf-79c7-6bac-a957-d2fc0c8529ff" executionId="da512a45-084c-4641-adcd-f84a3d966bcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="902ea80f-a72d-44b6-95b5-1f38ed70baf2" testId="060d123e-a355-52bf-4010-92376ef69cf8" testName="FrontPagePostingsTest" computerName="MTUTTY-LAP" duration="00:00:05.7680817" startTime="2011-09-10T19:49:56.5810975-05:00" endTime="2011-09-10T19:50:03.0742057-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="902ea80f-a72d-44b6-95b5-1f38ed70baf2">
+    </UnitTestResult>
+    <UnitTestResult executionId="6ba15b47-05a6-4f0b-baa9-05cf1fe6a441" testId="6ae18999-8c77-96f8-0306-1d34b37f70bd" testName="FindByRewriteIDTest" computerName="MTUTTY-LAP" duration="00:00:00.0531595" startTime="2011-09-10T19:50:03.0842063-05:00" endTime="2011-09-10T19:50:03.1472099-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ba15b47-05a6-4f0b-baa9-05cf1fe6a441">
+    </UnitTestResult>
+    <UnitTestResult executionId="096a1385-5feb-4874-bf5b-71ddb0c28a74" testId="b2ecd4f0-02d2-6c27-ecde-4eb0dfaf67d2" testName="BlogPostServiceConstructorTest" computerName="MTUTTY-LAP" duration="00:00:00.0516384" startTime="2011-09-10T19:50:03.1532102-05:00" endTime="2011-09-10T19:50:03.2162138-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="096a1385-5feb-4874-bf5b-71ddb0c28a74">
+    </UnitTestResult>
+    <UnitTestResult executionId="da512a45-084c-4641-adcd-f84a3d966bcb" testId="e3a03cbf-79c7-6bac-a957-d2fc0c8529ff" testName="ArchivePostingsTest" computerName="MTUTTY-LAP" duration="00:00:00.0830050" startTime="2011-09-10T19:50:03.2212141-05:00" endTime="2011-09-10T19:50:03.3152195-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da512a45-084c-4641-adcd-f84a3d966bcb">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method PersonalBlog.Tests.BlogPostServiceTest.ArchivePostingsTest threw exception: 
+System.NotImplementedException: The method or operation is not implemented.</Message>
+          <StackTrace>    at PersonalBlog.Services.BlogPostService.ArchivePostings() in C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\PersonalBlog\Services\BlogPostService.cs:line 35
+   at PersonalBlog.Tests.BlogPostServiceTest.ArchivePostingsTest() in C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\PersonalBlog.Tests\BlogPostServiceTest.cs:line 90
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

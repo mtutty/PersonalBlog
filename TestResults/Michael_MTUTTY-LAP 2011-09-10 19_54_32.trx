@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="03ec81c2-4301-4794-ad36-bf622c26bdba" name="Michael@MTUTTY-LAP 2011-09-10 19:54:32" runUser="mtutty-lap\Michael" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="bd0ec8d0-ce16-42c8-8c54-7fcdc57fad85">
+    <Deployment runDeploymentRoot="Michael_MTUTTY-LAP 2011-09-10 19_54_32">
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\FluentNHibernate.1.3.0.717\lib\FluentNHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll" />
+      <DeploymentItem filename="C:\Users\Michael\Documents\Visual Studio 2010\Projects\PersonalBlog\packages\MySql.Data.6.4.3\lib\net40\mysql.data.dll" />
+      <DeploymentItem filename="C:\Users\Michael\documents\visual studio 2010\Projects\PersonalBlog\PersonalBlog\bin\PersonalBlog.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-09-10T19:54:32.8030074-05:00" queuing="2011-09-10T19:54:34.2260888-05:00" start="2011-09-10T17:54:34.3740972-05:00" finish="2011-09-10T17:54:41.6358616-05:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="15" executed="15" passed="15" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ArchivePostingsTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="e3a03cbf-79c7-6bac-a957-d2fc0c8529ff">
+      <Execution id="9a66813b-e70b-42be-a9b5-f48f6def16f1" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ArchivePostingsTest" />
+    </UnitTest>
+    <UnitTest name="GetSettingStringTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="b49e14a3-0cb0-c0b3-bc70-1c297eb868ed">
+      <Execution id="06e7c157-4e92-4fe3-81db-505341d332e3" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetSettingStringTest" />
+    </UnitTest>
+    <UnitTest name="About" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="f443bfca-a82d-8921-fdf7-258d45bc6150">
+      <Execution id="a2185202-c8e0-47ab-a365-9d7329df2e04" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Controllers.HomeControllerTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="89f88405-654f-d313-0489-a5d33bfd80fa">
+      <Execution id="01497f29-9f65-473a-93dc-5f269ebdc470" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Controllers.HomeControllerTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="ConfigSettingsServiceNullConstructorTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="92267241-0f9c-e1a1-47cf-dbec5beeac99">
+      <Execution id="66720b88-4773-4c67-aa3b-7cf17fa84e1f" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ConfigSettingsServiceNullConstructorTest" />
+    </UnitTest>
+    <UnitTest name="FrontPagePostingsTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="060d123e-a355-52bf-4010-92376ef69cf8">
+      <Execution id="58535353-1ccb-4488-8c83-643d458969a0" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="FrontPagePostingsTest" />
+    </UnitTest>
+    <UnitTest name="GetSettingStringNoDefaultTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="fae29225-5f00-02d8-7ca8-7a569d5c0a82">
+      <Execution id="3eab5bf5-f13a-4e27-9e1a-9af4c7bbd83f" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetSettingStringNoDefaultTest" />
+    </UnitTest>
+    <UnitTest name="BlogPostServiceConstructorTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="b2ecd4f0-02d2-6c27-ecde-4eb0dfaf67d2">
+      <Execution id="9eabad6a-b029-41a0-a3b0-77769c69b1d4" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="BlogPostServiceConstructorTest" />
+    </UnitTest>
+    <UnitTest name="CreateDBWorks" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="0f4a4367-5624-5a80-3425-7c629e66c587">
+      <Execution id="fd1a5742-2171-4f05-9f1c-38bb11adc522" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Models.BlogPostTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateDBWorks" />
+    </UnitTest>
+    <UnitTest name="ConfigSettingsServiceConstructorTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="5b92c567-e9ac-208c-dc19-33878201bc6a">
+      <Execution id="294ea962-32be-4fc3-a884-4fae960a1eed" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ConfigSettingsServiceConstructorTest" />
+    </UnitTest>
+    <UnitTest name="SessionFactoryWorks" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="780baf48-1b07-6b1b-db57-9b3851db87d9">
+      <Execution id="59c09cff-0fcf-43e5-b409-e923dd6f1606" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Models.BlogPostTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SessionFactoryWorks" />
+    </UnitTest>
+    <UnitTest name="FindByRewriteIDTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="6ae18999-8c77-96f8-0306-1d34b37f70bd">
+      <Execution id="7b6ab648-33a2-42c0-a1a6-1d51cbf9b9c5" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.BlogPostServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="FindByRewriteIDTest" />
+    </UnitTest>
+    <UnitTest name="TestBlogPostLifeCycle" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="caa00a8b-f67b-8613-e961-0c6c51590ab6">
+      <Execution id="8a093c4a-9988-43fd-88bd-ab20abdd2a08" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Models.BlogPostTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestBlogPostLifeCycle" />
+    </UnitTest>
+    <UnitTest name="GetSettingIntTest" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="656630bd-0ba5-6314-30e5-0c40dbf1c989">
+      <Execution id="10ec799e-7e99-4935-8c45-04d53ebb0d19" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.ConfigSettingsServiceTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetSettingIntTest" />
+    </UnitTest>
+    <UnitTest name="TestRepositoryWorks" storage="c:\users\michael\documents\visual studio 2010\projects\personalblog\personalblog.tests\bin\debug\personalblog.tests.dll" id="4946f5a1-d518-b538-825c-01b1751bc569">
+      <Execution id="4588937e-cd04-4418-ae62-fd34292c7e7f" />
+      <TestMethod codeBase="C:/Users/Michael/Documents/Visual Studio 2010/Projects/PersonalBlog/PersonalBlog.Tests/bin/Debug/PersonalBlog.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PersonalBlog.Tests.Models.BlogPostTest, PersonalBlog.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestRepositoryWorks" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="060d123e-a355-52bf-4010-92376ef69cf8" executionId="58535353-1ccb-4488-8c83-643d458969a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f4a4367-5624-5a80-3425-7c629e66c587" executionId="fd1a5742-2171-4f05-9f1c-38bb11adc522" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4946f5a1-d518-b538-825c-01b1751bc569" executionId="4588937e-cd04-4418-ae62-fd34292c7e7f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b92c567-e9ac-208c-dc19-33878201bc6a" executionId="294ea962-32be-4fc3-a884-4fae960a1eed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="656630bd-0ba5-6314-30e5-0c40dbf1c989" executionId="10ec799e-7e99-4935-8c45-04d53ebb0d19" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ae18999-8c77-96f8-0306-1d34b37f70bd" executionId="7b6ab648-33a2-42c0-a1a6-1d51cbf9b9c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="780baf48-1b07-6b1b-db57-9b3851db87d9" executionId="59c09cff-0fcf-43e5-b409-e923dd6f1606" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="89f88405-654f-d313-0489-a5d33bfd80fa" executionId="01497f29-9f65-473a-93dc-5f269ebdc470" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92267241-0f9c-e1a1-47cf-dbec5beeac99" executionId="66720b88-4773-4c67-aa3b-7cf17fa84e1f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2ecd4f0-02d2-6c27-ecde-4eb0dfaf67d2" executionId="9eabad6a-b029-41a0-a3b0-77769c69b1d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b49e14a3-0cb0-c0b3-bc70-1c297eb868ed" executionId="06e7c157-4e92-4fe3-81db-505341d332e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="caa00a8b-f67b-8613-e961-0c6c51590ab6" executionId="8a093c4a-9988-43fd-88bd-ab20abdd2a08" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3a03cbf-79c7-6bac-a957-d2fc0c8529ff" executionId="9a66813b-e70b-42be-a9b5-f48f6def16f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f443bfca-a82d-8921-fdf7-258d45bc6150" executionId="a2185202-c8e0-47ab-a365-9d7329df2e04" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fae29225-5f00-02d8-7ca8-7a569d5c0a82" executionId="3eab5bf5-f13a-4e27-9e1a-9af4c7bbd83f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="58535353-1ccb-4488-8c83-643d458969a0" testId="060d123e-a355-52bf-4010-92376ef69cf8" testName="FrontPagePostingsTest" computerName="MTUTTY-LAP" duration="00:00:05.3197697" startTime="2011-09-10T19:54:34.3750973-05:00" endTime="2011-09-10T19:54:40.4248182-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="58535353-1ccb-4488-8c83-643d458969a0">
+    </UnitTestResult>
+    <UnitTestResult executionId="fd1a5742-2171-4f05-9f1c-38bb11adc522" testId="0f4a4367-5624-5a80-3425-7c629e66c587" testName="CreateDBWorks" computerName="MTUTTY-LAP" duration="00:00:00.0019513" startTime="2011-09-10T19:54:40.4278184-05:00" endTime="2011-09-10T19:54:40.4488196-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd1a5742-2171-4f05-9f1c-38bb11adc522">
+    </UnitTestResult>
+    <UnitTestResult executionId="4588937e-cd04-4418-ae62-fd34292c7e7f" testId="4946f5a1-d518-b538-825c-01b1751bc569" testName="TestRepositoryWorks" computerName="MTUTTY-LAP" duration="00:00:00.1315806" startTime="2011-09-10T19:54:40.4508197-05:00" endTime="2011-09-10T19:54:40.5846205-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4588937e-cd04-4418-ae62-fd34292c7e7f">
+    </UnitTestResult>
+    <UnitTestResult executionId="294ea962-32be-4fc3-a884-4fae960a1eed" testId="5b92c567-e9ac-208c-dc19-33878201bc6a" testName="ConfigSettingsServiceConstructorTest" computerName="MTUTTY-LAP" duration="00:00:00.0009825" startTime="2011-09-10T19:54:40.6002205-05:00" endTime="2011-09-10T19:54:40.6158205-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="294ea962-32be-4fc3-a884-4fae960a1eed">
+    </UnitTestResult>
+    <UnitTestResult executionId="10ec799e-7e99-4935-8c45-04d53ebb0d19" testId="656630bd-0ba5-6314-30e5-0c40dbf1c989" testName="GetSettingIntTest" computerName="MTUTTY-LAP" duration="00:00:00.0010535" startTime="2011-09-10T19:54:40.6158205-05:00" endTime="2011-09-10T19:54:40.6314205-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10ec799e-7e99-4935-8c45-04d53ebb0d19">
+    </UnitTestResult>
+    <UnitTestResult executionId="7b6ab648-33a2-42c0-a1a6-1d51cbf9b9c5" testId="6ae18999-8c77-96f8-0306-1d34b37f70bd" testName="FindByRewriteIDTest" computerName="MTUTTY-LAP" duration="00:00:00.1345957" startTime="2011-09-10T19:54:40.6314205-05:00" endTime="2011-09-10T19:54:40.7718208-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7b6ab648-33a2-42c0-a1a6-1d51cbf9b9c5">
+    </UnitTestResult>
+    <UnitTestResult executionId="59c09cff-0fcf-43e5-b409-e923dd6f1606" testId="780baf48-1b07-6b1b-db57-9b3851db87d9" testName="SessionFactoryWorks" computerName="MTUTTY-LAP" duration="00:00:00.0768191" startTime="2011-09-10T19:54:40.7874208-05:00" endTime="2011-09-10T19:54:40.8810210-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59c09cff-0fcf-43e5-b409-e923dd6f1606">
+    </UnitTestResult>
+    <UnitTestResult executionId="01497f29-9f65-473a-93dc-5f269ebdc470" testId="89f88405-654f-d313-0489-a5d33bfd80fa" testName="Index" computerName="MTUTTY-LAP" duration="00:00:00.1245972" startTime="2011-09-10T19:54:40.9122210-05:00" endTime="2011-09-10T19:54:41.0608287-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01497f29-9f65-473a-93dc-5f269ebdc470">
+    </UnitTestResult>
+    <UnitTestResult executionId="66720b88-4773-4c67-aa3b-7cf17fa84e1f" testId="92267241-0f9c-e1a1-47cf-dbec5beeac99" testName="ConfigSettingsServiceNullConstructorTest" computerName="MTUTTY-LAP" duration="00:00:00.0223302" startTime="2011-09-10T19:54:41.0698292-05:00" endTime="2011-09-10T19:54:41.1018310-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66720b88-4773-4c67-aa3b-7cf17fa84e1f">
+    </UnitTestResult>
+    <UnitTestResult executionId="9eabad6a-b029-41a0-a3b0-77769c69b1d4" testId="b2ecd4f0-02d2-6c27-ecde-4eb0dfaf67d2" testName="BlogPostServiceConstructorTest" computerName="MTUTTY-LAP" duration="00:00:00.0541586" startTime="2011-09-10T19:54:41.1158318-05:00" endTime="2011-09-10T19:54:41.1778354-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9eabad6a-b029-41a0-a3b0-77769c69b1d4">
+    </UnitTestResult>
+    <UnitTestResult executionId="06e7c157-4e92-4fe3-81db-505341d332e3" testId="b49e14a3-0cb0-c0b3-bc70-1c297eb868ed" testName="GetSettingStringTest" computerName="MTUTTY-LAP" duration="00:00:00.0012694" startTime="2011-09-10T19:54:41.1858358-05:00" endTime="2011-09-10T19:54:41.2038368-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="06e7c157-4e92-4fe3-81db-505341d332e3">
+    </UnitTestResult>
+    <UnitTestResult executionId="8a093c4a-9988-43fd-88bd-ab20abdd2a08" testId="caa00a8b-f67b-8613-e961-0c6c51590ab6" testName="TestBlogPostLifeCycle" computerName="MTUTTY-LAP" duration="00:00:00.2132180" startTime="2011-09-10T19:54:41.2088371-05:00" endTime="2011-09-10T19:54:41.4318499-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a093c4a-9988-43fd-88bd-ab20abdd2a08">
+    </UnitTestResult>
+    <UnitTestResult executionId="9a66813b-e70b-42be-a9b5-f48f6def16f1" testId="e3a03cbf-79c7-6bac-a957-d2fc0c8529ff" testName="ArchivePostingsTest" computerName="MTUTTY-LAP" duration="00:00:00.0443266" startTime="2011-09-10T19:54:41.4368502-05:00" endTime="2011-09-10T19:54:41.5008538-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9a66813b-e70b-42be-a9b5-f48f6def16f1">
+    </UnitTestResult>
+    <UnitTestResult executionId="a2185202-c8e0-47ab-a365-9d7329df2e04" testId="f443bfca-a82d-8921-fdf7-258d45bc6150" testName="About" computerName="MTUTTY-LAP" duration="00:00:00.0511127" startTime="2011-09-10T19:54:41.5078542-05:00" endTime="2011-09-10T19:54:41.5688577-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2185202-c8e0-47ab-a365-9d7329df2e04">
+    </UnitTestResult>
+    <UnitTestResult executionId="3eab5bf5-f13a-4e27-9e1a-9af4c7bbd83f" testId="fae29225-5f00-02d8-7ca8-7a569d5c0a82" testName="GetSettingStringNoDefaultTest" computerName="MTUTTY-LAP" duration="00:00:00.0010767" startTime="2011-09-10T19:54:41.5758581-05:00" endTime="2011-09-10T19:54:41.5848586-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3eab5bf5-f13a-4e27-9e1a-9af4c7bbd83f">
+    </UnitTestResult>
+  </Results>
+</TestRun>
