@@ -1,0 +1,88 @@
+﻿@model BlogPostViewModel
+@using PersonalBlog.Models
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/tinymce/tiny_mce.js")" type="text/javascript"></script>
+<div class="post span-12">
+    <div class="post-meta col span-2">
+        <span>Actions</span>
+        <ul>
+            <li><a href="javascript:$('form').submit();" title="Submit Posting">Submit Posting</a> </li>
+            <li>
+                @Html.ActionLink("Back to List", "Index")
+            </li>
+        </ul>
+    </div>
+    <div class="post-content last span-9 nudge-2">
+        @using (Html.BeginForm()) {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <legend>BlogPost</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BlogPost.Title, "Title")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.BlogPost.Title, new { size = 50, maxlength = 50, style = "width: 30em;" })
+                    @Html.ValidationMessageFor(model => model.BlogPost.Title)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BlogPost.RewriteID, "Rewrite Name")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.BlogPost.RewriteID, new { size = 50, maxlength = 50, style = "width: 30em;" })
+                    @Html.ValidationMessageFor(model => model.BlogPost.RewriteID)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BlogPost.CreateDate, "Created On")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.BlogPost.CreateDate, new { @readonly = "readonly", size = 20 })
+                    @Html.ValidationMessageFor(model => model.BlogPost.CreateDate)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BlogPost.Author, "Author")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.BlogPost.Author, new { @readonly = "readonly", size = 20 })
+                    @Html.ValidationMessageFor(model => model.BlogPost.Author)
+                    @Html.HiddenFor(model => model.BlogPost.ContentType)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BlogPost.PublishStatus, "Publish Status")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.BlogPost.PublishStatus, Model.PublishStatuses)
+                    @Html.ValidationMessageFor(model => model.BlogPost.PublishStatus)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BlogPost.ViewCount, "View Count")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.BlogPost.ViewCount, new { @readonly = "readonly", size = 5 })
+                    @Html.ValidationMessageFor(model => model.BlogPost.ViewCount)
+                </div>
+                <div class="editor-field">
+                    <br />
+                    @Html.TextAreaFor(model => model.BlogPost.Content)
+                    @Html.ValidationMessageFor(model => model.BlogPost.Content)
+                </div>
+            </fieldset>
+            <input type="submit" name="submit" value="Save" />
+        }
+    </div>
+</div>
+<script type="text/javascript" src="/Scripts/tinymce/jquery.tinymce.js" ></script>
+<script type="text/javascript" src="/Scripts/use_tinymce.js" ></script>
+<script type="text/javascript" defer="defer">
+
+    $().ready(function () {
+        use_tinymce();
+
+        $('#submitbutton').click(
+            function () {
+                $("form").submit();
+            });
+
+        $('form').validate();
+    });
+</script>
