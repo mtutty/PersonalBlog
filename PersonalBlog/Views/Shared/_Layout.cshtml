@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+@using PersonalBlog.Controllers
 @{
     var siteTitle = @System.Configuration.ConfigurationManager.AppSettings["SiteTitle"];
     if (string.IsNullOrEmpty(siteTitle) == true) { siteTitle = @"Unnamed Site"; }
@@ -51,7 +52,7 @@
         }
         <div id="footer">
             <p id="foo">
-                <em>personal</em> blog</p>
+                <em>personal</em> blog, version @typeof(BlogPostController).Assembly.GetName().Version</p>
             <p style="color: #222;">
                 Copyright © 2011 Michael Tutty. All rights reserved.</p>
             <p>

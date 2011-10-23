@@ -16,9 +16,9 @@ namespace PersonalBlog.App_Start {
 
             Bind<ConfigSettingsService>().ToConstant(new ConfigSettingsService()).InSingletonScope();
             Bind<DbSessionFactory>().To<DbSessionFactory>().InSingletonScope();
-            Bind<ISession>().ToConstant(Kernel.Get<DbSessionFactory>().Session).InRequestScope();
-            Bind<ContentFileService>().To<ContentFileService>().InSingletonScope();
-            Bind<BlogPostService>().To<BlogPostService>().InSingletonScope();
+            Bind<ISession>().ToMethod(x => Kernel.Get<DbSessionFactory>().Session).InRequestScope();
+            Bind<ContentFileService>().To<ContentFileService>().InRequestScope();
+            Bind<BlogPostService>().To<BlogPostService>().InRequestScope();
         }
     }
 }
