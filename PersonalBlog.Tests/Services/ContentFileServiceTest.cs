@@ -1,66 +1,17 @@
 ﻿using PersonalBlog.Services;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace PersonalBlog.Tests
-{
-    
-    
+namespace PersonalBlog.Tests {
+
     /// <summary>
     ///This is a test class for ContentFileServiceTest and is intended
     ///to contain all ContentFileServiceTest Unit Tests
     ///</summary>
-    [TestClass()]
-    public class ContentFileServiceTest {
-
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext {
-            get {
-                return testContextInstance;
-            }
-            set {
-                testContextInstance = value;
-            }
-        }
-
-        #region Additional test attributes
-        // 
-        //You can use the following additional attributes as you write your tests:
-        //
-        //Use ClassInitialize to run code before running the first test in the class
-        //[ClassInitialize()]
-        //public static void MyClassInitialize(TestContext testContext)
-        //{
-        //}
-        //
-        //Use ClassCleanup to run code after all tests in a class have run
-        //[ClassCleanup()]
-        //public static void MyClassCleanup()
-        //{
-        //}
-        //
-        //Use TestInitialize to run code before running each test
-        //[TestInitialize()]
-        //public void MyTestInitialize()
-        //{
-        //}
-        //
-        //Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{
-        //}
-        //
-        #endregion
+    [TestFixture()]
+    public class ContentFileServiceTest : InjectedUnitTest {
 
         private ContentFileService TempRootedCFS() {
             return this.CustomRootedCFS(System.IO.Path.GetTempPath());
@@ -75,7 +26,7 @@ namespace PersonalBlog.Tests
         /// <summary>
         ///A test for ContentFileService Constructor
         ///</summary>
-        [TestMethod()]
+        [Test()]
         public void ContentFileServiceConstructorTest() {
             ConfigSettingsService config = new ConfigSettingsService();
             ContentFileService target = new ContentFileService(config);
@@ -85,25 +36,25 @@ namespace PersonalBlog.Tests
         /// <summary>
         ///A test for ContentFileService Constructor
         ///</summary>
-        [TestMethod()]
+        [Test()]
         public void ContentFileServiceConstructorTestDefault() {
-            ContentFileService target = new ContentFileService();
+            ContentFileService target = Get<ContentFileService>();
             Assert.IsNotNull(target);
         }
 
         /// <summary>
         ///A test for ListFolders
         ///</summary>
-        [TestMethod()]
+        [Test()]
         public void ListFoldersTest() {
-            ContentFileService target = new ContentFileService(); 
+            ContentFileService target = Get<ContentFileService>();
             string parentFolder = string.Empty; // TODO: Initialize to an appropriate value
             IList<string> actual;
             actual = target.ListFolders(parentFolder);
             Assert.IsNotNull(actual);
         }
 
-        [TestMethod]
+        [Test()]
         public void ListFoldersWithoutPermissionsTest() {
             ContentFileService target = CustomRootedCFS(@"C:\windows\system32");
             string parentFolder = string.Empty; // TODO: Initialize to an appropriate value
@@ -112,7 +63,7 @@ namespace PersonalBlog.Tests
             Assert.IsNotNull(actual);
         }
 
-        [TestMethod]
+        [Test()]
         public void ListFoldersInNonExistentRootTest() {
             ContentFileService target = CustomRootedCFS(@"c:\zzaadorothy\123");
             string parentFolder = string.Empty; // TODO: Initialize to an appropriate value
@@ -124,7 +75,7 @@ namespace PersonalBlog.Tests
         /// <summary>
         ///A test for ListFolders
         ///</summary>
-        [TestMethod()]
+        [Test()]
         public void ListFoldersTestRoot() {
             ContentFileService target = this.TempRootedCFS();
             IList<string> actual;
@@ -134,9 +85,9 @@ namespace PersonalBlog.Tests
             Assert.IsFalse(actual.Contains(@".."));
         }
 
-        [TestMethod]
+        [Test()]
         public void RootFolderTest() {
-            ContentFileService target = new ContentFileService();
+            ContentFileService target = Get<ContentFileService>();
             Assert.IsNotNull(target.RootFolder);
 
             target = this.TempRootedCFS();

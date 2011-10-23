@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBlog", "PersonalBlo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBlog.Tests", "PersonalBlog.Tests\PersonalBlog.Tests.csproj", "{91161548-2DB2-405E-BB27-DCF145B86083}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D266D877-C660-4984-BB1B-C4E7C4AB3DAF}"
+	ProjectSection(SolutionItems) = preProject
+		PersonalBlog.build = PersonalBlog.build
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

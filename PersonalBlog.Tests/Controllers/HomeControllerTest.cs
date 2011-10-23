@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using PersonalBlog;
 using PersonalBlog.Controllers;
+using PersonalBlog.Tests;
 
 namespace PersonalBlog.Tests.Controllers
 {
-    [TestClass]
-    public class HomeControllerTest
-    {
-        [TestMethod]
+    [TestFixture()]
+    public class HomeControllerTest : InjectedUnitTest {
+        [Test(), Ignore("Homogeneous AppDomain issue")]
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = Get<HomeController>();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -27,11 +27,11 @@ namespace PersonalBlog.Tests.Controllers
             Assert.IsNotNull(result.ViewBag.BlogPosts);
         }
 
-        [TestMethod]
+        [Test(), Ignore("Homogeneous AppDomain issue")]
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = Get<HomeController>();
 
             // Act
             ViewResult result = controller.About() as ViewResult;

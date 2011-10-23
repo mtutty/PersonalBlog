@@ -1,7 +1,6 @@
 ﻿using PersonalBlog.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
 using System.Collections.Generic;
 using NHibernate;
 using FluentNHibernate.Cfg;
@@ -18,61 +17,18 @@ namespace PersonalBlog.Tests.Models {
     ///This is a test class for BlogPostTest and is intended
     ///to contain all BlogPostTest Unit Tests
     ///</summary>
-    [TestClass()]
-    public class BlogPostTest {
-        private TestContext testContextInstance;
+    [TestFixture()]
+    public class BlogPostTest : InjectedUnitTest {
 
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext {
-            get {
-                return testContextInstance;
-            }
-            set {
-                testContextInstance = value;
-            }
-        }
-
-        #region Additional test attributes
-        // 
-        //You can use the following additional attributes as you write your tests:
-        //
-        //Use ClassInitialize to run code before running the first test in the class
-        //[ClassInitialize()]
-        //public static void MyClassInitialize(TestContext testContext) {
-        //}
-        //
-        //Use ClassCleanup to run code after all tests in a class have run
-        //[ClassCleanup()]
-        //public static void MyClassCleanup()
-        //{
-        //}
-        //
-        //Use TestInitialize to run code before running each test
-        //[TestInitialize()]
-        //public void MyTestInitialize()
-        //{
-        //}
-        //
-        //Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{
-        //}
-        //
-        #endregion
-
-        [TestMethod]
+        [Test()]
         public void SessionFactoryWorks() {
-            Assert.IsNotNull(DbSessionFactory.SessionFactory);
-            Assert.IsNotNull(DbSessionFactory.Session);
+            Assert.IsNotNull(Get<DbSessionFactory>().SessionFactory);
+            Assert.IsNotNull(Get<DbSessionFactory>().Session);
         }
 
-        [TestMethod]
+        [Test()]
         public void CreateDBWorks() {
-            DbSessionFactory.CreateConfig()
+            Get<DbSessionFactory>().CreateConfig()
                 .ExposeConfiguration(cfg => {
                     try {
                         new SchemaExport(cfg)
@@ -83,16 +39,16 @@ namespace PersonalBlog.Tests.Models {
                 });
         }
 
-        [TestMethod]
+        [Test()]
         public void TestRepositoryWorks() {
-            var db = DbSessionFactory.Session;
+            var db = Get<DbSessionFactory>().Session;
             Assert.IsNotNull(db);
             Assert.IsNotNull(db.CreateCriteria<BlogPost>().List<BlogPost>());
         }
 
-        [TestMethod]
+        [Test()]
         public void TestBlogPostLifeCycle() {
-            var db = DbSessionFactory.Session;
+            var db = Get<DbSessionFactory>().Session;
             Assert.IsNotNull(db);
 
             var post = new BlogPost() {

@@ -12,21 +12,10 @@ namespace PersonalBlog.Controllers
 {
     public class HomeController : Controller
     {
-        //private PersonalBlogModelContainer db = new PersonalBlogModelContainer();
-        protected ISession db;
-        protected ConfigSettingsService settings;
         protected BlogPostService blogService;
 
-        public HomeController(ISession db, ConfigSettingsService settings, BlogPostService blogService) {
-            this.db = db;
-            this.settings = settings;
-            this.blogService = blogService;
-        }
-
-        public HomeController() {
-            this.db = DbSessionFactory.Session;
-            this.settings = new ConfigSettingsService();
-            this.blogService = new BlogPostService(this.db, settings);
+        public HomeController(BlogPostService bps) {
+            this.blogService = bps;
         }
 
         public ActionResult Index()

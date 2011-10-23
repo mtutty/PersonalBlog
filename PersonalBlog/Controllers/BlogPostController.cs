@@ -13,14 +13,10 @@ namespace PersonalBlog.Controllers
     [Authorize()]
     public class BlogPostController : Controller
     {
-        //private PersonalBlogModelContainer db = new PersonalBlogModelContainer();
-        private ConfigSettingsService config = new ConfigSettingsService();
         private BlogPostService bps = null;
 
-        public BlogPostController() {
-            DbSessionFactory.ConfigService = config;
-            ISession db = DbSessionFactory.Session;
-            this.bps = new BlogPostService(db, this.config);
+        public BlogPostController(BlogPostService bps) {
+            this.bps = bps;
         }
 
         //

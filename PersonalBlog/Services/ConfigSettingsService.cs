@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Collections.Specialized;
+using System.Configuration;
 
 namespace PersonalBlog.Services {
     public class ConfigSettingsService {
@@ -32,6 +33,12 @@ namespace PersonalBlog.Services {
                 if (int.TryParse(val, out ret)) return ret;
             }
             return defaultValue;
+        }
+
+        public string GetConnectionString(string connName) {
+            ConnectionStringSettings c = ConfigurationManager.ConnectionStrings[connName];
+            if (c != null) return c.ConnectionString;
+            return string.Empty;
         }
     }
 }

@@ -1,0 +1,66 @@
+<project name="PersonalBlog" default="rebuild" xmlns="http://nant.sf.net/release/0.91/nant.xsd" >
+  <property name="configuration" value="Release"/>
+  <property name="build.dir" value="build" />
+  <property name="package.dir" value="dist" />
+  <property name="test.project" value="${project::get-name()}.Tests" />
+
+  <target name="clean" description="Delete all previously compiled binaries.">
+    <delete dir="${project::get-name()}/bin" />
+    <delete>
+      <fileset>
+        <include name="${build.dir}/**" />
+        <include name="${project::get-name()}/*.suo" />
+        <include name="${project::get-name()}/*.user" />
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="build" description="Build all targets.">
+    <call target="build.web"/>
+    <call target="test.web"/>
+    <call target="package.web" />
+  </target>
+
+  <target name="rebuild" depends="clean, build" />
+
+  <target name="build.web">
+    <msbuild project="PersonalBlog.sln">
+      <property name="Configuration" value="${configuration}" />
+      <property name="DeployOnBuild" value="false" />
+      <property name="DeployTarget" value="package" />
+      <property name="PackageAsSingleFile" value="false" />
+      <property name="_PackageTempDir" value="../${build.dir}" />
+      <property name="AutoParameterizationWebConfigConnectionStrings" value="false" />
+    </msbuild>
+  </target>
+
+  <target name="test.web">
+    <nunit2>
+      <formatter type="Plain" />
+      <test assemblyname="${test.project}/bin/${configuration}/${test.project}.dll" appconfig="${test.project}/App.config" />
+    </nunit2>
+  </target>
+
+  <target name="package.web">
+    <msbuild project="PersonalBlog.sln">
+      <property name="Configuration" value="${configuration}" />
+      <property name="DeployOnBuild" value="true" />
+      <property name="DeployTarget" value="package" />
+      <property name="PackageAsSingleFile" value="false" />
+      <property name="_PackageTempDir" value="../${build.dir}" />
+      <property name="AutoParameterizationWebConfigConnectionStrings" value="false" />
+    </msbuild>
+
+    <property name="version.assemblyfile" value="${build.dir}/bin/${project::get-name()}.dll" />
+    <property name="version.string" value="${assemblyname::get-version(assemblyname::get-assembly-name(version.assemblyfile))}" />
+    <property name="package.file" value="${package.dir}/${project::get-name()}-${version.string}.zip" />
+
+    <zip zipfile="${package.file}">
+      <fileset basedir="${build.dir}">
+        <include name="**/*" />
+        <exclude name="**/*.config" />
+      </fileset>
+    </zip>
+  </target>
+
+</project>
