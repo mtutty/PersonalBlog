@@ -11,7 +11,7 @@ namespace PersonalBlog.Tests
     ///to contain all ConfigSettingsServiceTest Unit Tests
     ///</summary>
     [TestFixture()]
-    public class ConfigSettingsServiceTest : InjectedUnitTest {
+    public class ConfigSettingsServiceTest {
 
         /// <summary>
         ///A test for ConfigSettingsService Constructor

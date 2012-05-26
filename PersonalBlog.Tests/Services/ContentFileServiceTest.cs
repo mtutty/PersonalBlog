@@ -11,7 +11,11 @@ namespace PersonalBlog.Tests {
     ///to contain all ContentFileServiceTest Unit Tests
     ///</summary>
     [TestFixture()]
-    public class ContentFileServiceTest : InjectedUnitTest {
+    public class ContentFileServiceTest {
+
+        private ContentFileService GetContentFileService() {
+            return new ContentFileService(new ConfigSettingsService());
+        }
 
         private ContentFileService TempRootedCFS() {
             return this.CustomRootedCFS(System.IO.Path.GetTempPath());
@@ -38,7 +42,7 @@ namespace PersonalBlog.Tests {
         ///</summary>
         [Test()]
         public void ContentFileServiceConstructorTestDefault() {
-            ContentFileService target = Get<ContentFileService>();
+            ContentFileService target = GetContentFileService();
             Assert.IsNotNull(target);
         }
 
@@ -47,7 +51,7 @@ namespace PersonalBlog.Tests {
         ///</summary>
         [Test()]
         public void ListFoldersTest() {
-            ContentFileService target = Get<ContentFileService>();
+            ContentFileService target = GetContentFileService();
             string parentFolder = string.Empty; // TODO: Initialize to an appropriate value
             IList<string> actual;
             actual = target.ListFolders(parentFolder);
@@ -87,7 +91,7 @@ namespace PersonalBlog.Tests {
 
         [Test()]
         public void RootFolderTest() {
-            ContentFileService target = Get<ContentFileService>();
+            ContentFileService target = GetContentFileService();
             Assert.IsNotNull(target.RootFolder);
 
             target = this.TempRootedCFS();

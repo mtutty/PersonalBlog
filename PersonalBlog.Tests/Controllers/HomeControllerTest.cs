@@ -7,16 +7,24 @@ using NUnit.Framework;
 using PersonalBlog;
 using PersonalBlog.Controllers;
 using PersonalBlog.Tests;
+using PersonalBlog.Services;
 
 namespace PersonalBlog.Tests.Controllers
 {
     [TestFixture()]
-    public class HomeControllerTest : InjectedUnitTest {
+    public class HomeControllerTest {
+
+        private HomeController GetHomeController() {
+            return new HomeController(
+                new BlogPostService(new ConfigSettingsService())
+                );
+        }
+
         [Test(), Ignore("Homogeneous AppDomain issue")]
         public void Index()
         {
             // Arrange
-            HomeController controller = Get<HomeController>();
+            HomeController controller = GetHomeController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -31,7 +39,7 @@ namespace PersonalBlog.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = Get<HomeController>();
+            HomeController controller = GetHomeController();
 
             // Act
             ViewResult result = controller.About() as ViewResult;

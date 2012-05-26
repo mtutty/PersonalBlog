@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 
 using PersonalBlog.Models;
-using NHibernate;
 using PersonalBlog.Services;
 
 namespace PersonalBlog.Controllers

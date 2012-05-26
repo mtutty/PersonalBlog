@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Mvc;
 using PersonalBlog.Models;
 using PersonalBlog.Services;
-using NHibernate;
 
 namespace PersonalBlog.Controllers
 { 
@@ -18,6 +17,8 @@ namespace PersonalBlog.Controllers
         public BlogPostController(BlogPostService bps) {
             this.bps = bps;
         }
+
+        public BlogPostController() : this(new BlogPostService(new ConfigSettingsService())) {}
 
         //
         // GET: /BlogPost/
@@ -50,10 +51,10 @@ namespace PersonalBlog.Controllers
         //
         // GET: /BlogPost/Details/5
 
-        public ViewResult Details(int id)
+        public ViewResult Details(string id)
         {
             ViewBag.ShowRightBlocks = false;
-            BlogPost blogpost = this.bps.DBSession.Load<BlogPost>(id);
+            BlogPost blogpost = this.bps.FindByID(id);
             return View(blogpost);
         }
 
@@ -86,7 +87,7 @@ namespace PersonalBlog.Controllers
         {
             if (ModelState.IsValid)
             {
-                this.bps.DBSession.Save(model.BlogPost);
+                this.bps.Save(model.BlogPost);
                 
                 return RedirectToAction("Index");  
             }
@@ -98,11 +99,11 @@ namespace PersonalBlog.Controllers
         //
         // GET: /BlogPost/Edit/5
  
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
             var model = new BlogPostViewModel()
                 {
-                    BlogPost = this.bps.DBSession.Load<BlogPost>(id),
+                    BlogPost = this.bps.FindByID(id),
                     PublishStatuses = this.GetPublishStatusList()
                 };
             return View(model);
@@ -116,7 +117,7 @@ namespace PersonalBlog.Controllers
         {
             if (ModelState.IsValid)
             {
-                this.bps.DBSession.Merge(model.BlogPost);
+                this.bps.Save(model.BlogPost);
                 return RedirectToAction("Index");
             }
 
@@ -127,9 +128,9 @@ namespace PersonalBlog.Controllers
         //
         // GET: /BlogPost/Delete/5
  
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            BlogPost model = this.bps.DBSession.Load<BlogPost>(id);
+            BlogPost model = this.bps.FindByID(id);
             return View(model);
         }
 
@@ -137,10 +138,10 @@ namespace PersonalBlog.Controllers
         // POST: /BlogPost/Delete/5
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            BlogPost model = this.bps.DBSession.Load<BlogPost>(id);
-            this.bps.DBSession.Delete(model);
+            BlogPost model = this.bps.FindByID(id);
+            this.bps.Delete(id);
             return RedirectToAction("Index");
         }
 
@@ -163,7 +164,7 @@ namespace PersonalBlog.Controllers
         protected override void Dispose(bool disposing)
         {
             if (this.bps != null)
-                this.bps.DBSession.Flush();
+                this.bps.Dispose();
             base.Dispose(disposing);
         }
     }

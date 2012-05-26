@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MongoDB.Bson;
 
 namespace PersonalBlog.Models
 {
@@ -25,8 +26,7 @@ namespace PersonalBlog.Models
             this.ViewCount = 0;
         }
 
-        [Required]
-        public virtual global::System.Int32 Id { get; set; }
+        public virtual ObjectId Id { get; set; }
 
         [Required]
         [StringLength(255, MinimumLength = 1)]
@@ -58,18 +58,5 @@ namespace PersonalBlog.Models
 
         public virtual IList<Comment> Comments { get; set; }
 
-        public virtual new bool Equals(object x, object y) {
-
-            BlogPost a = x as BlogPost;
-            BlogPost b = y as BlogPost;
-            if (a == null || b == null) {
-                return false;
-            }
-            return a.Id == b.Id;
-        }
-
-        public virtual int GetHashCode(object obj) {
-            throw new NotImplementedException();
-        }
     }
 }

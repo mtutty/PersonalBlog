@@ -1,49 +1,72 @@
 ﻿using System.Collections.Generic;
-using NHibernate;
 using PersonalBlog.Models;
-using NHibernate.Criterion;
+using MongoDB;
+using FluentMongo.Linq;
+using System.Linq;
+using MongoDB.Bson;
+using System;
 
 namespace PersonalBlog.Services {
-    public class BlogPostService {
+    public class BlogPostService : IDisposable {
 
-        protected ISession db = null;
         protected ConfigSettingsService config = null;
+        protected PersonalBlogRepository repo = null;
 
-        public BlogPostService(ISession db, ConfigSettingsService config) {
-            this.db = db;
+        public BlogPostService(ConfigSettingsService config) {
+            this.repo = new PersonalBlogRepository(config);
             this.config = config;
         }
 
-        public ISession DBSession { get { return this.db; } }
-
         public IList<BlogPost> FrontPagePostings() {
-            return this.db.CreateCriteria<BlogPost>()
-                    .Add(Expression.Eq(@"PublishStatus", BlogPost.StatusPublished))
-                    .AddOrder(Order.Desc(@"CreateDate"))
-                    .SetMaxResults(this.config.GetSetting(@"BlogPost.FrontPage.MaxRecords", 15))
-                    .List<BlogPost>();
+            var q = this.repo.BlogPosts.Where(x => x.PublishStatus == BlogPost.StatusPublished)
+                                  .OrderByDescending(x => x.CreateDate)
+                                  .Take(this.config.GetSetting(@"BlogPost.Archive.MaxRecords", 15));
+            return q.ToList();
         }
 
         public BlogPost FindByRewriteID(string RewriteID) {
-            return this.db.CreateCriteria<BlogPost>()
-                .Add(Expression.Eq(@"RewriteID", RewriteID))
-                .UniqueResult<BlogPost>();
+            return this.repo.BlogPosts
+                .Where(x => x.RewriteID == RewriteID)
+                .FirstOrDefault();
+        }
+
+        public BlogPost FindByID(string id) {
+            var docId = ObjectId.Parse(id);
+            return this.repo.BlogPosts
+                       .Where(x => x.Id == docId)
+                       .FirstOrDefault();
+        }
+
+        public BlogPost Save(BlogPost post) {
+            this.repo.Save(post);
+            return post;
+        }
+
+        public void Delete(string id) {
+            var docId = ObjectId.Parse(id);
+            this.repo.Delete(docId);
         }
 
         public IList<BlogPost> ArchivePostings() {
-            return this.db.CreateCriteria<BlogPost>()
-                .Add(Expression.Eq(@"PublishStatus", BlogPost.StatusArchived))
-                .AddOrder(Order.Desc(@"CreateDate"))
-                .SetMaxResults(this.config.GetSetting(@"BlogPost.Archive.MaxRecords", 15))
-                .List<BlogPost>();
+            var q = this.repo.BlogPosts
+                .Where(x => x.PublishStatus == BlogPost.StatusArchived)
+                .OrderByDescending(x => x.CreateDate)
+                .Take(this.config.GetSetting(@"BlogPost.Archive.MaxRecords", 15));
+
+            return q.ToList();
         }
 
         public IList<BlogPost> List(string PublishStatus) {
-            return this.db.CreateCriteria<BlogPost>()
-                .Add(Expression.Eq(@"PublishStatus", PublishStatus))
-                .AddOrder(Order.Desc(@"CreateDate"))
-                .List<BlogPost>();
+            var q = this.repo.BlogPosts
+                .Where(x => x.PublishStatus == PublishStatus)
+                .OrderByDescending(x => x.CreateDate);
+
+            return q.ToList();
         }
 
+
+        public void Dispose() {
+            // TODO: Do we need this?
+        }
     }
 }
