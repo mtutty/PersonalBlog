@@ -15,12 +15,10 @@ namespace PersonalBlog.Tests.Controllers
     public class HomeControllerTest {
 
         private HomeController GetHomeController() {
-            return new HomeController(
-                new BlogPostService(new ConfigSettingsService())
-                );
+            return new HomeController();
         }
 
-        [Test(), Ignore("Homogeneous AppDomain issue")]
+        [Test()]
         public void Index()
         {
             // Arrange

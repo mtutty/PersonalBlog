@@ -24,8 +24,5 @@ namespace PersonalBlog.Models {
         [StringLength(65535, MinimumLength = 1)]
         public virtual global::System.String Content { get; set; }
 
-        [Required]
-        public virtual BlogPost Post { get; set; }
-
     }
 }

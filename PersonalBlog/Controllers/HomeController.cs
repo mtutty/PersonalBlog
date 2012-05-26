@@ -9,12 +9,12 @@ using PersonalBlog.Services;
 
 namespace PersonalBlog.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         protected BlogPostService blogService;
 
-        public HomeController(BlogPostService bps) {
-            this.blogService = bps;
+        public HomeController() : base() {
+            this.blogService = base.GetBlogPostService();
         }
 
         public ActionResult Index()

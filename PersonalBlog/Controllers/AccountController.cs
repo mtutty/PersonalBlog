@@ -9,7 +9,7 @@ using PersonalBlog.Models;
 
 namespace PersonalBlog.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
 
         //

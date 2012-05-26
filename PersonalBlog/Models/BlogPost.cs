@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace PersonalBlog.Models
 {
@@ -26,7 +28,8 @@ namespace PersonalBlog.Models
             this.ViewCount = 0;
         }
 
-        public virtual ObjectId Id { get; set; }
+        [BsonId(IdGenerator=typeof(StringObjectIdGenerator))]
+        public virtual string Id { get; set; }
 
         [Required]
         [StringLength(255, MinimumLength = 1)]

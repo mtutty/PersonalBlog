@@ -10,15 +10,13 @@ using PersonalBlog.Services;
 namespace PersonalBlog.Controllers
 { 
     [Authorize()]
-    public class BlogPostController : Controller
+    public class BlogPostController : BaseController
     {
         private BlogPostService bps = null;
 
-        public BlogPostController(BlogPostService bps) {
-            this.bps = bps;
+        public BlogPostController() : base() {
+            this.bps = base.GetBlogPostService();
         }
-
-        public BlogPostController() : this(new BlogPostService(new ConfigSettingsService())) {}
 
         //
         // GET: /BlogPost/
@@ -163,8 +161,6 @@ namespace PersonalBlog.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (this.bps != null)
-                this.bps.Dispose();
             base.Dispose(disposing);
         }
     }

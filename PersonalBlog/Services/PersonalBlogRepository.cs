@@ -8,10 +8,15 @@ using MongoDB.Driver.Builders;
 
 namespace PersonalBlog.Services {
     public class PersonalBlogRepository {
-        private MongoDB.Driver.MongoDatabase db;
+
+        protected ConfigSettingsService cfg;
+        protected MongoDB.Driver.MongoDatabase db;
+
+        public PersonalBlogRepository() : this(new ConfigSettingsService()) { }
 
         public PersonalBlogRepository(ConfigSettingsService config) {
-            this.db = MongoDB.Driver.MongoDatabase.Create(config.GetSetting(@"Mongo.Url", @"mongodb://localhost/personalblog"));
+            this.cfg = config;
+            this.db = MongoDB.Driver.MongoDatabase.Create(this.cfg.GetSetting(@"Mongo.Url", @"mongodb://localhost/personalblog"));
         }
 
         public MongoDB.Driver.MongoDatabase Database {
@@ -31,12 +36,15 @@ namespace PersonalBlog.Services {
             AssertResult(result);
         }
 
-        public void Delete(ObjectId id) {
+        public void Delete(string id) {
             var result = db.GetCollection<BlogPost>(@"BlogPost").Remove(Query.EQ("_id", id));
             AssertResult(result);
         }
 
         private static void AssertResult(MongoDB.Driver.SafeModeResult result) {
+            if (result == null)
+                return;
+
             if (result.Ok == false) {
                 throw new System.Exception(result.LastErrorMessage);
             }
