@@ -1,4 +1,5 @@
 <project name="PersonalBlog" default="rebuild" xmlns="http://nant.sf.net/release/0.91/nant.xsd" >
+  <property name="nant.settings.currentframework" value="net-4.0" />
   <property name="configuration" value="Release"/>
   <property name="build.dir" value="build" />
   <property name="package.dir" value="dist" />
@@ -16,8 +17,7 @@
   </target>
 
   <target name="build" description="Build all targets.">
-    <call target="build.web"/>
-    <call target="test.web"/>
+    <call target="test.web" />
     <call target="package.web" />
   </target>
 
@@ -34,14 +34,22 @@
     </msbuild>
   </target>
 
-  <target name="test.web">
-    <nunit2>
+  <target name="test.web" depends="build.web">
+    <!--<nunit2>
       <formatter type="Plain" />
       <test assemblyname="${test.project}/bin/${configuration}/${test.project}.dll" appconfig="${test.project}/App.config" />
-    </nunit2>
+    </nunit2>-->
+    <exec program="nunit-console.exe">
+      <arg value="${test.project}/bin/${configuration}/${test.project}.dll" />
+      <arg value="/framework=${nant.settings.currentframework}" />
+      <arg value="/domain=Single" />
+      <arg value="/nologo" />
+      <arg value="/nodots" />
+      <arg value="/output=${test.project}-result.xml" />
+    </exec>
   </target>
 
-  <target name="package.web">
+  <target name="package.web" depends="build.web">
     <msbuild project="PersonalBlog.sln">
       <property name="Configuration" value="${configuration}" />
       <property name="DeployOnBuild" value="true" />

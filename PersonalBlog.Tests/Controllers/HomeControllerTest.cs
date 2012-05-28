@@ -33,7 +33,7 @@ namespace PersonalBlog.Tests.Controllers
             Assert.IsNotNull(result.ViewBag.BlogPosts);
         }
 
-        [Test(), Ignore("Homogeneous AppDomain issue")]
+        [Test()]
         public void About()
         {
             // Arrange
