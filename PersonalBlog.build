@@ -41,11 +41,11 @@
     </nunit2>-->
     <exec program="nunit-console.exe">
       <arg value="${test.project}/bin/${configuration}/${test.project}.dll" />
-      <arg value="/framework=${nant.settings.currentframework}" />
-      <arg value="/domain=Single" />
-      <arg value="/nologo" />
-      <arg value="/nodots" />
-      <arg value="/output=${test.project}-result.xml" />
+      <arg value="-framework=${nant.settings.currentframework}" />
+      <arg value="-domain=Single" />
+      <arg value="-nologo" />
+      <arg value="-nodots" />
+      <arg value="-output=${test.project}-result.xml" />
     </exec>
   </target>
 
